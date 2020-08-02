@@ -8,12 +8,20 @@
 export default {
     name: 'index',
     mounted () {
-        //解构赋值
-        let [json, arr, num, str] = [{a: 'a', b: 'b'}, [1, 2, 3], 18, '解构赋值'];
-        alert(JSON.stringify(json));
-        alert(arr);
-        alert(num);
-        alert(str);
+        //字符串
+        let str1 = 'http://www.baidu.com';
+        if (str1.startsWith('http://')) {
+            console.log('普通网址');
+        } else {
+            console.log('其他网址');
+        };
+
+        let str2 = '.jpg';
+        if (str2.endsWith('.jpg')) {
+            console.log('jpg文件');
+        } else {
+            console.log('其他文件');
+        }
     }
 }
 </script>
