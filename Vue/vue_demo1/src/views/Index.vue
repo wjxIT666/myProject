@@ -8,13 +8,12 @@
 export default {
     name: 'index',
     mounted () {
-        //默认参数
-        let fn = (a, b = 1, c = 2) => {
-            console.log(a);
-            console.log(b);
-            console.log(c);
-        };
-        fn(0);
+        //解构赋值
+        let [json, arr, num, str] = [{a: 'a', b: 'b'}, [1, 2, 3], 18, '解构赋值'];
+        alert(JSON.stringify(json));
+        alert(arr);
+        alert(num);
+        alert(str);
     }
 }
 </script>
