@@ -8,7 +8,13 @@
 export default {
     name: 'index',
     mounted () {
-        
+        //Promise
+        Promise.all([
+            this.$api.getInterface(),
+            this.$api.postInterface()
+        ]).then( res => {
+            console.log(res);
+        });
     }
 }
 </script>

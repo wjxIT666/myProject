@@ -3,7 +3,7 @@ import http from './http.js';
 //get接口
 const getInterface = () => {
     return http({
-        url: '',
+        url: '/getRouter',
         method: 'get'
     });
 }
@@ -11,7 +11,7 @@ const getInterface = () => {
 //post接口
 const postInterface = () => {
     return http({
-        url: '',
+        url: '/postRouter',
         method: 'post'
     });
 }
