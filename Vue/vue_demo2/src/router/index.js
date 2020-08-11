@@ -22,6 +22,11 @@ Vue.use(VueRouter)
     path: '/index',
     name: 'index',
     component: () => import('../views/Index.vue')
+  },
+  {
+    path: '/index2',
+    name: 'index2',
+    component: () => import('../views/Index2.vue')
   }
 ]
 
