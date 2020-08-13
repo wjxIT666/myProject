@@ -27,6 +27,21 @@ Vue.use(VueRouter)
     path: '/index2',
     name: 'index2',
     component: () => import('../views/Index2.vue')
+  },
+  {
+    path: '/index3',
+    name: 'index3',
+    component: () => import('../views/Index3.vue')
+  },
+  {
+    path: '/index4',
+    name: 'index4',
+    component: () => import('../views/Index4.vue')
+  },
+  {
+    path: '/index5/:newsid',
+    name: 'index5',
+    component: () => import('../views/Index5.vue')
   }
 ]
 
