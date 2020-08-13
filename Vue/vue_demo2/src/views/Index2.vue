@@ -213,9 +213,76 @@ export default {
             sayHi: function () {
                 console.log('Hello World');
             }
-        }
+        };
         let father = new Father(10, 10);
         father.sayHi();
+        //原型链
+        function GetName (name) {
+            this.name = name;
+        };
+        //原型
+        GetName.prototype = {
+            constructor: GetName,
+            doSome: function (data) {
+                return data;
+            }
+        };
+        var GetNameResult = new GetName('小王');
+        console.log(GetNameResult.__proto__);
+        //高阶函数
+        //回调函数
+        function fn6 (a, b, callback) {
+            callback && callback();
+            return a + b;
+        };
+        var fn6Result = fn6(1, 2, function () {
+            console.log('回调函数~');
+        });
+        console.log(fn6Result);
+        //闭包
+        function fn7 () {
+            var num100 = 18;
+            return function () {
+                return num100;
+            };
+        };
+        var fn7Result = fn7();
+        console.log(fn7Result());
+        //递归函数
+        var num200 = 0;
+        function fn8 () {
+            num200++;
+            if (num200 == 6) {
+                console.log('===递归函数===');
+                return;
+            };
+            fn8();
+        };
+        fn8();
+        //浅拷贝与深拷贝
+        var user = {
+            name: '王建星',
+            sister: {
+                name: '王新瑶'
+            }
+        };
+        var student = JSON.parse(JSON.stringify(user));
+        user.sister.name = '哈哈哈';
+        console.log(user);
+        console.log(student);
+        //正则表达式
+        var reg1 = /^[a-zA-Z0-9_]{6,9}$/;
+        if (reg1.test('a115345_!')) {
+            console.log('匹配成功~');
+        } else {
+            console.log('匹配失败~');
+        };
+        var reg2 = /^\d?$/;
+        if (reg2.test('11')) {
+            console.log('匹配成功2');
+        } else {
+            console.log('匹配失败2');
+        }
     }
 }
 </script>
