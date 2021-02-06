@@ -1,0 +1,97 @@
+body { 
+    background-color: red;
+}
+
+//1.注释
+/** 
+    多行注释会被编译
+*/
+
+//2.定义变量
+$height: 100px;
+.box {
+    height: $height;
+}
+
+//3.插值
+$i: 3;
+$margin: margin;
+.box#{$i} {
+    height: $height;
+    #{$margin}: 10px;
+}
+
+//4.运算
+.box#{$i} {
+    /** 四则运算 */
+    height: $height * 2;
+    /** 同属性单位想加 */
+    width: $height + 200px;
+    /** 除法 */
+    line-height: ($height / 2);
+}
+
+//自定义函数
+@function sum($num1, $num2) {
+    @return $num1 + $num2;
+}
+
+//5.函数
+.box2 {
+    /** 四舍五入函数 */
+    font-size: round(12.5px);
+    /** 自定义函数 */
+    line-height: sum(4px, 5px);
+}
+
+//6.混入
+@mixin hide($color) {
+    display: none;
+    color: $color;
+}
+
+.box {
+    height: 100px;
+    @include hide(pink);
+}
+
+//7.继承
+%line {
+    text-decoration: none;
+}
+
+.box7 {
+    @extend %line;
+}
+
+.box8 {
+    @extend %line;
+}
+
+//8.合并
+$background: (color: red, repeat: no-repeat);
+.box9 {
+    background: map-values($background);
+    background: zip(map-values($background)...);
+}
+
+//9.条件
+$count: 9;
+.box10 {
+    @if ($count > 9) {
+        width: 100px + $count;
+    }
+    @else {
+        width: 100px;
+    }
+}
+
+//10.循环
+@for $index from 0 through 2 {
+    .box#{$index} {
+        width: 100px + $index;
+    }
+}
+
+//11.引入
+@import './reset.scss';

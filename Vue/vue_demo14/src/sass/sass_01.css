@@ -1,0 +1,68 @@
+@charset "UTF-8";
+body {
+  background-color: red;
+}
+
+/** 
+    多行注释会被编译
+*/
+.box {
+  height: 100px;
+}
+
+.box3 {
+  height: 100px;
+  margin: 10px;
+}
+
+.box3 {
+  /** 四则运算 */
+  height: 200px;
+  /** 同属性单位想加 */
+  width: 300px;
+  /** 除法 */
+  line-height: 50px;
+}
+
+.box2 {
+  /** 四舍五入函数 */
+  font-size: 13px;
+  /** 自定义函数 */
+  line-height: 9px;
+}
+
+.box {
+  height: 100px;
+  display: none;
+  color: pink;
+}
+
+.box7, .box8 {
+  text-decoration: none;
+}
+
+.box9 {
+  background: red, no-repeat;
+  background: red no-repeat;
+}
+
+.box10 {
+  width: 100px;
+}
+
+.box0 {
+  width: 100px;
+}
+
+.box1 {
+  width: 101px;
+}
+
+.box2 {
+  width: 102px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
